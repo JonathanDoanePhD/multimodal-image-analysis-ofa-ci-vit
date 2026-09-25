@@ -1,13 +1,24 @@
-# Multimodal Image Analysis - OFA + CI + ViT Ensemble Optimization
+# Multimodal image analysis - OFA, CLIP Interrogator, and ViT
 
-A Kaggle-origin image analysis project by Jonathan Doane. This repository makes the project notebook easy to find from my GitHub portfolio.
+A Kaggle-origin exploration that brings together three image-analysis approaches to produce embeddings: OFA-generated captions, CLIP Interrogator captions, and a vision transformer. The notebook uses a handwritten mathematics example alongside images from the Kaggle Stable Diffusion image-to-prompts competition.
 
-## Start here
+[Read the notebook](multimodal-image-analysis-ofa-ci-vit-ensemble-opt.ipynb).
 
-[Open the analysis notebook](multimodal-image-analysis-ofa-ci-vit-ensemble-opt.ipynb).
+## What the notebook does
 
-The notebook is the source of record for the dataset, modeling steps, evaluation, and findings. This short overview deliberately does not claim a benchmark result or a deployed model without a separate, verified summary. The GitHub copy is intended for portfolio review; the work was originally developed on Kaggle.
+1. Loads the historical Kaggle competition inputs, pretrained models, and supporting assets.
+2. Produces captions or image embeddings through the three approaches.
+3. Compares their outputs against the provided target embeddings using mean squared error (MSE).
+4. Fits a linear regression combination of the three output arrays and reports an MSE comparison.
 
-## Project context
+The notebook's historical summary reports an ensemble MSE of 0.0025 and relative MSE reductions of about 47% against OFA, 45% against CI, and 39% against ViT on its evaluated array. **These are in-sample comparisons.** The regression weights are fitted using the same target embeddings used for the reported evaluation. The numbers do not demonstrate generalization to unseen images or accurate assessment of handwritten mathematics.
 
-The title reflects an OFA + CI + ViT ensemble optimization investigation in multimodal image analysis. For a quick technical review, open the notebook and inspect its problem framing, preprocessing, model comparisons, and evaluation sections.
+## Provenance and reproducibility
+
+This work was developed on Kaggle and adapts ideas and code from earlier public notebooks, including [CLIPInterrogator + OFA + ViT](https://www.kaggle.com/code/motono0223/clipinterrogator-ofa-vit), an [OFA competition notebook](https://www.kaggle.com/code/mayukh18/ofa-transformer-lb-0-42644), and a [BLIP/CLIP Interrogator notebook](https://www.kaggle.com/code/leonidkulyk/lb-0-45836-blip-clip-clip-interrogator). See the notebook's own links for model and asset references. The GitHub copy documents an integration and analysis exercise; it does not claim sole authorship of the pretrained models or upstream notebooks.
+
+The cells refer to specific `/kaggle/input/` paths, a GPU, and an older Kaggle environment. Those assets are not bundled here, and the notebook has not been rerun in a fresh environment for this GitHub copy.
+
+## Next step
+
+Fit the ensemble on one subset and test it on a held-out subset, then examine whether embedding error corresponds to useful human judgments about handwritten work. This would make the result much stronger evidence for a real application.
