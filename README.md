@@ -4,6 +4,9 @@ A Kaggle-origin exploration that brings together three image-analysis approaches
 
 [Read the notebook](multimodal-image-analysis-ofa-ci-vit-ensemble-opt.ipynb).
 
+[<img width="1536" height="864" alt="Jonathan_Doane_Multimodal_Image_Analysis pptx" src="https://github.com/user-attachments/assets/6f599e3d-707d-4272-917f-8e96026407d8" />](https://drive.google.com/file/d/1o4eCZVQYi4_eNsbvghfhzZKzre2geuE0/view?usp=drive_link)
+
+
 ## What the notebook does
 
 1. Loads the historical Kaggle competition inputs, pretrained models, and supporting assets.
