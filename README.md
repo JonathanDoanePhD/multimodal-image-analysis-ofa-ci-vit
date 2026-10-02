@@ -1,4 +1,4 @@
-# Multimodal image analysis - OFA, CLIP Interrogator, and ViT
+# Multimodal Image Analysis - OFA, CLIP Interrogator, and ViT
 
 A Kaggle-origin exploration that brings together three image-analysis approaches to produce embeddings: OFA-generated captions, CLIP Interrogator captions, and a vision transformer. The notebook uses a handwritten mathematics example alongside images from the Kaggle Stable Diffusion image-to-prompts competition.
 
